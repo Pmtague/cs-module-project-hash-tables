@@ -1,0 +1,47 @@
+Hash Tables
+
+O(1) lookups by key
+
+Python dict type is implemented with a hash Tables
+
+Problem we want to solve:
+
+a = [3, 8, 2, None, None, 0, 7, None]
+
+Is a number on the list?
+
+# Naive O(n) search:
+
+for n in a:
+	if n == 9:
+		return True
+return False
+
+What if we could magically just know which slot 9 would be in, if it were there?
+
+The hashing function does this.
+
+index = magic_index_finder(9)
+if a[index] == 9:
+	return True
+
+________________
+
+table = [None] * 8
+
+def find_index(key):
+	return key % len(table)
+
+index = find_index(3490)  # index should be 0...7
+
+print(index)
+
+table[index] = "my value!"
+
+
+
+____________
+d = {
+	12:"hi",
+	34
+}
